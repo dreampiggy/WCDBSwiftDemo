@@ -13,6 +13,7 @@
 		32B4F14F25B04DDA007DAA34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B4F14D25B04DDA007DAA34 /* Main.storyboard */; };
 		32B4F15125B04DDC007DAA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B4F15025B04DDC007DAA34 /* Assets.xcassets */; };
 		32B4F15425B04DDC007DAA34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B4F15225B04DDC007DAA34 /* LaunchScreen.storyboard */; };
+		45562D810EE54B98132C25C3 /* libPods-WCDBSwiftDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB07E64970657CDE3E2B2BA /* libPods-WCDBSwiftDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		32B4F15025B04DDC007DAA34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32B4F15325B04DDC007DAA34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32B4F15525B04DDC007DAA34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA481854A976D36F71F0B1E0 /* Pods-WCDBSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCDBSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-WCDBSwiftDemo/Pods-WCDBSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		CFB07E64970657CDE3E2B2BA /* libPods-WCDBSwiftDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WCDBSwiftDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D83A0D7CBFCC064F9C9CE4 /* Pods-WCDBSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCDBSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-WCDBSwiftDemo/Pods-WCDBSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45562D810EE54B98132C25C3 /* libPods-WCDBSwiftDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B8928DBCE73A82A9885FE1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA481854A976D36F71F0B1E0 /* Pods-WCDBSwiftDemo.debug.xcconfig */,
+				F4D83A0D7CBFCC064F9C9CE4 /* Pods-WCDBSwiftDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1ACA0EB959C451C13B3B81C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFB07E64970657CDE3E2B2BA /* libPods-WCDBSwiftDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		32B4F13B25B04DDA007DAA34 = {
 			isa = PBXGroup;
 			children = (
 				32B4F14625B04DDA007DAA34 /* WCDBSwiftDemo */,
 				32B4F14525B04DDA007DAA34 /* Products */,
+				0B8928DBCE73A82A9885FE1C /* Pods */,
+				1ACA0EB959C451C13B3B81C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32B4F15825B04DDC007DAA34 /* Build configuration list for PBXNativeTarget "WCDBSwiftDemo" */;
 			buildPhases = (
+				1D410F3208C980CC864A4681 /* [CP] Check Pods Manifest.lock */,
 				32B4F14025B04DDA007DAA34 /* Sources */,
 				32B4F14125B04DDA007DAA34 /* Frameworks */,
 				32B4F14225B04DDA007DAA34 /* Resources */,
@@ -131,6 +157,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D410F3208C980CC864A4681 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WCDBSwiftDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32B4F14025B04DDA007DAA34 /* Sources */ = {
@@ -283,6 +334,7 @@
 		};
 		32B4F15925B04DDC007DAA34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA481854A976D36F71F0B1E0 /* Pods-WCDBSwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +353,7 @@
 		};
 		32B4F15A25B04DDC007DAA34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4D83A0D7CBFCC064F9C9CE4 /* Pods-WCDBSwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
